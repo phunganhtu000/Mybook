@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import HeaderComponent from '../components/headerComponents';
+import HeaderComponents from '../components/headerComponents';
 
 export default class Bookcase extends Component {
   constructor(props) {
@@ -17,9 +17,15 @@ export default class Bookcase extends Component {
   }
 
   render() {
+    const {navigation} = this.props;
     return (
       <View style={styles.saf}>
-        {/* <HeaderComponent title="hello" iconLeft="menu" typeIconLeft="Feather" /> */}
+        <HeaderComponents
+          // title="hello"
+          iconLeft="menu"
+          typeIconLeft="Feather"
+          navigationProps={navigation}
+        />
         <Text>Book</Text>
       </View>
     );

@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet, Dimensions, View} from 'react-native';
 import React from 'react';
 import {Icon} from 'native-base';
 import TabNavigator from 'react-native-tab-navigator';
@@ -16,17 +16,19 @@ export default class Onboarding1 extends React.Component {
     this.state = {selectedTab: 'Home'};
   }
   render() {
+    const {navigation} = this.props;
     return (
       <TabNavigator>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'Home'}
           title="Trang chủ"
           selectedTitleStyle={{color: '#FF2D55'}}
-          renderIcon={
-            () => <Icon style={styles.inputIcon} name="home" type="AntDesign" />
-            // <Image source={require('../asset/image/explore.npg')} style={{size=20}}/>
-          }
-          render
+          renderIcon={() => (
+            <Icon style={styles.inputIcon1} name="home" type="AntDesign" />
+          )}
+          renderSelectedIcon={() => (
+            <Icon style={styles.inputIcon} type="AntDesign" name="home" />
+          )}
           onPress={() => this.setState({selectedTab: 'Home'})}>
           <Home navigation={this.props.navigation} />
         </TabNavigator.Item>
@@ -36,7 +38,10 @@ export default class Onboarding1 extends React.Component {
           title="Tin tức"
           selectedTitleStyle={{color: '#FF2D55'}}
           renderIcon={() => (
-            <Icon style={styles.inputIcon} name="newsletter" type="Entypo" />
+            <Icon style={styles.inputIcon1} name="newsletter" type="Entypo" />
+          )}
+          renderSelectedIcon={() => (
+            <Icon style={styles.inputIcon} type="Entypo" name="newsletter" />
           )}
           // renderBadge={() => <CustomBadgeView />}
           onPress={() => this.setState({selectedTab: 'New'})}>
@@ -49,9 +54,16 @@ export default class Onboarding1 extends React.Component {
           selectedTitleStyle={{color: '#FF2D55'}}
           renderIcon={() => (
             <Icon
-              style={styles.inputIcon}
+              style={styles.inputIcon1}
               name="file-cabinet"
               type="MaterialCommunityIcons"
+            />
+          )}
+          renderSelectedIcon={() => (
+            <Icon
+              style={styles.inputIcon}
+              type="MaterialCommunityIcons"
+              name="file-cabinet"
             />
           )}
           // renderBadge={() => <CustomBadgeView />}
@@ -65,9 +77,16 @@ export default class Onboarding1 extends React.Component {
           selectedTitleStyle={{color: '#FF2D55'}}
           renderIcon={() => (
             <Icon
-              style={styles.inputIcon}
+              style={styles.inputIcon1}
               name="portrait"
               type="FontAwesome5"
+            />
+          )}
+          renderSelectedIcon={() => (
+            <Icon
+              style={styles.inputIcon}
+              type="FontAwesome5"
+              name="portrait"
             />
           )}
           // renderBadge={() => <CustomBadgeView />}
@@ -99,5 +118,9 @@ const styles = StyleSheet.create({
   inputIcon: {
     fontSize: 20,
     color: '#FF2D55',
+  },
+  inputIcon1: {
+    fontSize: 20,
+    color: '#ACACAC',
   },
 });

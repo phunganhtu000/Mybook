@@ -63,14 +63,14 @@ const styles = StyleSheet.create({
   },
   body: {
     marginHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 7,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   btn: {
     width: 35,
-    height: 35,
+    height: 40,
     borderRadius: 35 / 2,
     alignItems: 'center',
     justifyContent: 'center',

@@ -56,21 +56,9 @@ const Screen2_StackNavigator = createStackNavigator({
 const Menu_Scren = createStackNavigator({
   Menu: {
     screen: Menu,
-    navigationOptions: ({navigation}) => ({
-      title: null,
-      header: (
-        <HeaderComponents
-          // title="hello"
-          iconLeft="menu"
-          typeIconLeft="Feather"
-          navigationProps={navigation}
-        />
-      ),
-      headerStyle: {
-        backgroundColor: '#E4CDCD',
-      },
-      headerTintColor: '#fff',
-    }),
+    navigationOptions: {
+      header: null,
+    },
   },
 });
 const DrawerNavigatorExample = createDrawerNavigator({
