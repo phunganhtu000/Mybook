@@ -1,138 +1,69 @@
+//This is an example code for Navigation Drawer with Custom Side bar//
+//This Example is for React Navigation 3.+//
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native';
 import {Icon} from 'native-base';
 
 export default class CustomSidebarMenu extends Component {
   constructor() {
     super();
-    this.state = {
-      name: '',
-      image: '',
-    };
-    this.proileImage =
-      'https://i.a4vn.com/2018/6/20/can-tien-nu-than-tam-suoi-mac-thieu-vai-moi-goi-ca-do-bong-da-98c21b.jpg';
-    this.items = [
-      {
-        navOptionName: 'Home',
-        screenToNavigate: 'NavScreen1',
-        icon: 'home',
-        type: 'AntDesign',
-      },
-      {
-        navOptionName: 'History',
-        screenToNavigate: 'NavScreen2',
-        icon: 'history',
-        type: 'MaterialIcons',
-      },
-      {
-        navOptionName: 'Settings',
-        screenToNavigate: 'NavScreen3',
-        icon: 'setting',
-        type: 'AntDesign',
-      },
-    ];
   }
 
-  componentDidMount() {}
-
   render() {
+    const {navigate} = this.props.navigation;
     return (
-      <View style={[styles.sideMenuContainer]}>
-        <View style={[styles.viewHeader]}>
+      <SafeAreaView style={styles.saf}>
+        <View style={styles.sideMenuContainer}>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Profile')}>
-            <Image
-              source={{
-                uri:
-                  'https://znews-photo.zadn.vn/w1024/Uploaded/kbd_bcvi/2019_11_23/5d828e8d6f24eb1eb5148f5c.jpg',
-              }}
-              style={styles.sideMenuProfileIcon}
-            />
+            onPress={() => this.props.navigation.navigate('Menu')}
+            style={styles.rowView}>
+            <Icon name="home" type="AntDesign" style={styles.icon} />
+            <Text style={styles.text}>Trang chủ</Text>
           </TouchableOpacity>
-          <View style={{marginLeft: '4%'}}>
-            <Text style={[styles.name]}>Anh tu</Text>
-            <Text>gia :</Text>
-            <Text>gia : 50,000</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Author')}
+            style={styles.rowView}>
+            <Icon name="user" type="SimpleLineIcons" style={styles.icon} />
+            <Text style={styles.text}>Tác giả</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigate('Category')}
+            style={styles.rowView}>
+            <Icon name="appstore-o" type="AntDesign" style={styles.icon} />
+            <Text style={styles.text}>Thể loại</Text>
+          </TouchableOpacity>
         </View>
-        {/*Setting up Navigation Options from option array using loop*/}
-        <View>
-          {this.items.map((item, key) => (
-            <View
-              style={{
-                paddingLeft: '4%',
-                paddingTop: '2%',
-                paddingBottom: '2%',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-              key={key}>
-              <Icon
-                name={item.icon}
-                type={item.type}
-                style={[styles.iconLeft]}
-              />
-              <Text
-                style={{
-                  fontSize: 16,
-                  marginLeft: 20,
-                }}
-                onPress={() => {
-                  this.props.navigation.navigate(item.screenToNavigate);
-                }}>
-                {item.navOptionName}
-              </Text>
-            </View>
-          ))}
-        </View>
-        <TouchableOpacity
-          style={{
-            paddingLeft: '4%',
-            paddingTop: '2%',
-            paddingBottom: '2%',
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}
-          onPress={() => this.logout()}>
-          <Icon name="log-out" type="Feather" style={[styles.iconLeft]} />
-          <Text
-            style={{
-              fontSize: 16,
-              marginLeft: 20,
-            }}>
-            Logout
-          </Text>
-        </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     );
   }
 }
-
 const styles = StyleSheet.create({
+  saf: {
+    flex: 1,
+  },
   sideMenuContainer: {
     width: '100%',
     height: '100%',
+    marginTop: 40,
   },
-  viewHeader: {
-    width: '100%',
-    height: '20%',
+  rowView: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: '4%',
-    marginBottom: '4%',
-    // paddingTop: setWidth('2%')
+    marginVertical: 12,
   },
-  name: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  icon: {
+    paddingHorizontal: 20,
+    fontSize: 26,
   },
-  sideMenuProfileIcon: {
-    width: '20%',
-    height: '20%',
-    borderRadius: 20,
-  },
-  iconLeft: {
-    fontSize: 10,
+  text: {
+    fontSize: 18,
+    textAlign: 'left',
   },
 });

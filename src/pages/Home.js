@@ -13,6 +13,7 @@ import FastImage from 'react-native-fast-image';
 import {setWidth, setHeight} from '../cores/baseFuntion';
 import {ScrollView} from 'react-native-gesture-handler';
 import CardView from 'react-native-cardview';
+import {Icon} from 'native-base';
 
 export default class Home extends Component {
   constructor(props) {
@@ -20,6 +21,15 @@ export default class Home extends Component {
     this.state = {
       position: 1,
       interval: null,
+      interval2: null,
+
+      dataText: [
+        {title: 'Ti1', content: 'Con1'},
+        {title: 'Ti2', content: 'Con2'},
+        {title: 'Ti3', content: 'Con3'},
+        {title: 'Ti4', content: 'Con4'},
+      ],
+      stt: 0,
       dataSource: [
         {
           title: 'Title 1',
@@ -99,36 +109,6 @@ export default class Home extends Component {
           url:
             'https://i.pinimg.com/564x/9e/fb/e3/9efbe345df76481b9f06e3013a9ed7db.jpg',
         },
-        {
-          title: 'Title 2',
-          caption: 'Caption 2',
-          url:
-            'https://i.pinimg.com/564x/5d/4e/bd/5d4ebdd2d066bb512b827b9e56f25838.jpg',
-        },
-        {
-          title: 'Title 3',
-          caption: 'Caption 3',
-          url:
-            'https://i.pinimg.com/564x/f3/9b/8a/f39b8a9521adabdf5ce1bf9926fa4ddd.jpg',
-        },
-        {
-          title: 'Title 1',
-          caption: 'Caption 1',
-          url:
-            'https://i.pinimg.com/564x/9e/fb/e3/9efbe345df76481b9f06e3013a9ed7db.jpg',
-        },
-        {
-          title: 'Title 2',
-          caption: 'Caption 2',
-          url:
-            'https://i.pinimg.com/564x/5d/4e/bd/5d4ebdd2d066bb512b827b9e56f25838.jpg',
-        },
-        {
-          title: 'Title 3',
-          caption: 'Caption 3',
-          url:
-            'https://i.pinimg.com/564x/f3/9b/8a/f39b8a9521adabdf5ce1bf9926fa4ddd.jpg',
-        },
       ],
     };
   }
@@ -137,15 +117,24 @@ export default class Home extends Component {
       interval: setInterval(() => {
         this.setState({
           position:
-            this.state.position === this.state.dataSource.length
+            this.state.position === this.state.dataSource.length - 1
               ? 0
               : this.state.position + 1,
+        });
+      }, 3000),
+      interval2: setInterval(() => {
+        this.setState({
+          stt:
+            this.state.stt === this.state.dataText.length - 1
+              ? 0
+              : this.state.stt + 1,
         });
       }, 3000),
     });
   }
   componentWillUnmount() {
     clearInterval(this.state.interval);
+    clearInterval(this.state.interval2);
   }
   render() {
     const {navigation} = this.props;
@@ -164,8 +153,15 @@ export default class Home extends Component {
             onPositionChanged={position => this.setState({position})}
           />
           <View style={styles.viewTitle}>
-            <Text style={styles.textTitle}>Title</Text>
-            <Text style={styles.textContent}>Content</Text>
+            <Text style={styles.textTitle}>
+              {this.state.dataText[this.state.stt].title}
+            </Text>
+            <Text style={styles.textContent}>
+              {this.state.dataText[this.state.stt].content}
+            </Text>
+
+            {/* <Text style={styles.textTitle}>Title</Text>
+            <Text style={styles.textContent}>Content</Text> */}
           </View>
           <View style={styles.viewngang} />
           <View style={styles.viewSelling}>
@@ -221,6 +217,43 @@ export default class Home extends Component {
               </TouchableOpacity>
             )}
           />
+          <View style={styles.viewtrong} />
+          <View style={styles.viewSelling}>
+            <Text style={{fontSize: setWidth('4.5%')}}>Sách nói</Text>
+            <Text style={{fontSize: setWidth('4.5%'), color: '#FF2D55'}}>
+              XEM TẤT CẢ
+            </Text>
+          </View>
+          <FlatList
+            style={{
+              marginTop: setWidth('3%'),
+              paddingHorizontal: setWidth('2%'),
+            }}
+            horizontal
+            data={this.state.dataSource.slice(0, 10)}
+            renderItem={({item}) => (
+              <TouchableOpacity
+                activeOpacity={1}
+                // onPress={() => navigate('Details', {item: item})}
+                style={styles.item}>
+                <CardView
+                // style={{ alignItems: 'center', justifyContent: 'center' }}
+                >
+                  <FastImage source={{uri: item.url}} style={styles.image} />
+                  <Text style={styles.textPosion}>10 phút</Text>
+                  <View style={styles.viewPosion}>
+                    <Icon
+                      name="play"
+                      type="FontAwesome5"
+                      style={{fontSize: setWidth('5%'), color: '#ffffff6b'}}
+                    />
+                  </View>
+                </CardView>
+                <Text>{item.title}</Text>
+                <Text style={{color: 'gray'}}>Author</Text>
+              </TouchableOpacity>
+            )}
+          />
         </ScrollView>
       </View>
     );
@@ -231,60 +264,6 @@ const styles = StyleSheet.create({
   saf: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  container: {
-    flex: 1,
-    //marginTop: 20,
-  },
-  list: {
-    paddingHorizontal: 5,
-    backgroundColor: '#E6E6E6',
-  },
-  listContainer: {
-    alignItems: 'center',
-  },
-  /******** card **************/
-  card: {
-    shadowColor: '#00000021',
-    borderRadius: 15,
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
-    elevation: 12,
-    marginVertical: 10,
-    backgroundColor: 'white',
-    flexBasis: '42%',
-    marginHorizontal: 10,
-  },
-  cardHeader: {
-    paddingVertical: 17,
-    paddingHorizontal: 16,
-    borderTopLeftRadius: 1,
-    borderTopRightRadius: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
-  },
-  cardFooter: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 12.5,
-    paddingBottom: 25,
-    paddingHorizontal: 16,
-    borderBottomLeftRadius: 1,
-    borderBottomRightRadius: 1,
-  },
-  cardImage: {
-    height: '20%',
-    width: '20%',
-    alignSelf: 'center',
   },
   title: {
     fontSize: 13,
@@ -322,6 +301,8 @@ const styles = StyleSheet.create({
   image: {
     width: setWidth('30%'),
     height: setWidth('45%'),
+    // alignItems: 'center',
+    // justifyContent: 'center',
     // shadowColor: '#000',
     // shadowOffset: {
     //   width: 0,
@@ -346,5 +327,22 @@ const styles = StyleSheet.create({
     width: setWidth('100%'),
     height: setHeight('1.5%'),
     marginVertical: setWidth('3%'),
+  },
+  viewPosion: {
+    width: setWidth('10%'),
+    height: setWidth('10%'),
+    borderRadius: setWidth('10%'),
+    backgroundColor: '#0000008c',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: setWidth('17.5%'),
+    left: setWidth('10%'),
+  },
+  textPosion: {
+    color: '#fff',
+    position: 'absolute',
+    bottom: setWidth('0.5%'),
+    left: setWidth('0.5%'),
   },
 });

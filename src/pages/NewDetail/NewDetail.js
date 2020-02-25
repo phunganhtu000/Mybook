@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import HeaderComponent from '../components/CustomHeaderBack';
+import {setWidth, setHeight} from '../../cores/baseFuntion';
+import HeaderComponent from '../../components/CustomHeaderBack';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -18,16 +19,17 @@ export default class Profile extends Component {
 
   render() {
     const {navigation} = this.props;
+    const item = this.props.navigation.state.params.item;
     return (
       <View style={styles.saf}>
-        {/* <HeaderComponent
+        <HeaderComponent
           iconRightStyle={{fontSize: 35}}
           iconLeft="ios-arrow-back"
           typeIconRight="EvilIcons"
-          title="Profile"
+          title={item.title}
           onPressLeft={() => navigation.goBack()}
-        /> */}
-        <Text>Profile</Text>
+        />
+        <Image style={styles.imageview} source={{uri: item.image}} />
       </View>
     );
   }
@@ -36,5 +38,9 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
   saf: {
     flex: 1,
+  },
+  imageview: {
+    width: '100%',
+    height: setWidth('55%'),
   },
 });

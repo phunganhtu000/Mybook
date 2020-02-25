@@ -10,45 +10,46 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Icon} from 'native-base';
+import {setWidth} from '../cores/baseFuntion';
 import FastImage from 'react-native-fast-image';
 
-export default class HeaderComponent extends Component {
+export default class HeaderAuthor extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  toggleDrawer = () => {
-    this.props.navigationProps.toggleDrawer();
-  };
   render() {
-    // const {navigation} = this.props;
+    const {navigation} = this.props;
     const {navigate} = this.props.navigationProps;
     return (
       <View style={[styles.container]}>
         <View style={[styles.body]}>
-          <TouchableOpacity
-            style={styles.btn}
-            // onPress={() => navigate('Home')}
-            onPress={this.toggleDrawer.bind(this)}>
+          <TouchableOpacity style={styles.btn} onPress={this.props.onPressLeft}>
             <Icon
               name={this.props.iconLeft}
               type={this.props.typeIconLeft}
               style={[styles.icon]}
             />
           </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigate('Author')}
-            style={styles.input}>
-            <Icon name="ios-search" type="Ionicons" style={styles.iconSearch} />
-            <Text>Tìm kiếm sách</Text>
-          </TouchableOpacity>
-          {/*<TouchableOpacity*/}
-          {/*    style={styles.btn}*/}
-          {/*    onPress={this.props.onPressRight}>*/}
-          {/*    <Icon name={this.props.iconRight} type={this.props.typeIconRight}*/}
-          {/*          style={[styles.icon, this.props.iconRightStyle, {color: ThemeConstants[theme].textColor}]}/>*/}
-          {/*</TouchableOpacity>*/}
-          <View style={styles.btn} />
+          <Text style={styles.title}>{this.props.title}</Text>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            {/* <TouchableOpacity onPress={this.props.getParam('increaseCount')}>
+              <Icon
+                name={this.props.getParam('otherParam') ? 'menu' : 'view-grid'}
+                type="MaterialCommunityIcons"
+                style={{color: '#000', marginRight: 15}}
+              />
+            </TouchableOpacity> */}
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={this.props.onPressRight}>
+              <Icon
+                name={this.props.iconRight}
+                type={this.props.typeIconRight}
+                style={[styles.icon, this.props.iconRightStyle]}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -80,10 +81,8 @@ const styles = StyleSheet.create({
     color: '#00003D',
   },
   title: {
-    color: '#00003D',
-    width: '50%',
     fontWeight: '400',
-    fontSize: 25,
+    fontSize: setWidth('5%'),
     textAlign: 'center',
   },
   input: {
