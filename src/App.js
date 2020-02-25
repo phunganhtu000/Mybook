@@ -17,6 +17,7 @@ import Home from './pages/Home';
 import {setWidth} from './cores/baseFuntion';
 import NewDetail from './pages/NewDetail/NewDetail';
 import Author from './pages/Author';
+import AuthorDetail from './pages/AuthorDetail/AuthorDetail';
 import Category from './pages/Category';
 import Profile from './pages/Profile';
 import Menu from './pages/Menu';
@@ -55,15 +56,22 @@ const FirstActivity_StackNavigator = createStackNavigator({
       headerLeft: <HeaderLefp navigationProps={navigation} />,
     }),
   },
+  AuthorDetail: {
+    screen: AuthorDetail,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 
 const Screen2_StackNavigator = createStackNavigator({
   //All the screen from the Screen2 will be indexed here
   Category: {
     screen: Category,
-    navigationOptions: {
-      header: null,
-    },
+    navigationOptions: ({navigation}) => ({
+      title: 'Danh sách thể loại',
+      headerLeft: <HeaderLefp navigationProps={navigation} />,
+    }),
   },
 });
 const Menu_Scren = createStackNavigator({

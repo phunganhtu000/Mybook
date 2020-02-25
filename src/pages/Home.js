@@ -33,7 +33,7 @@ export default class Home extends Component {
       stt: 0,
       dataSource: [
         {
-          title: 'Title 1',
+          title: 'Title 1asdasdasdasdasdasdsad',
           caption: 'Caption 1',
           url:
             'https://i.pinimg.com/564x/9e/fb/e3/9efbe345df76481b9f06e3013a9ed7db.jpg',
@@ -105,24 +105,16 @@ export default class Home extends Component {
             'https://i.pinimg.com/564x/f3/9b/8a/f39b8a9521adabdf5ce1bf9926fa4ddd.jpg',
         },
         {
-          title: 'Title 1',
-          caption: 'Caption 1',
+          title: 'Title 2',
+          caption: 'Caption 2',
           url:
-            'https://i.pinimg.com/564x/9e/fb/e3/9efbe345df76481b9f06e3013a9ed7db.jpg',
+            'https://i.pinimg.com/564x/5d/4e/bd/5d4ebdd2d066bb512b827b9e56f25838.jpg',
         },
       ],
     };
   }
   componentWillMount() {
     this.setState({
-      interval: setInterval(() => {
-        this.setState({
-          position:
-            this.state.position === this.state.dataSource.length - 1
-              ? 0
-              : this.state.position + 1,
-        });
-      }, 3000),
       interval2: setInterval(() => {
         this.setState({
           stt:
@@ -130,7 +122,7 @@ export default class Home extends Component {
               ? 0
               : this.state.stt + 1,
         });
-      }, 3000),
+      }, 2700),
     });
   }
   componentWillUnmount() {
@@ -199,8 +191,12 @@ export default class Home extends Component {
                 <CardView>
                   <FastImage source={{uri: item.url}} style={styles.image} />
                 </CardView>
-                <Text>{item.title}</Text>
-                <Text style={{color: 'gray'}}>Author</Text>
+                <Text style={styles.textTitle2} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <Text style={styles.textAuthor} numberOfLines={1}>
+                  Author Author AuthorAuthor
+                </Text>
               </TouchableOpacity>
             )}
           />
@@ -226,8 +222,12 @@ export default class Home extends Component {
                 <CardView>
                   <FastImage source={{uri: item.url}} style={styles.image2} />
                 </CardView>
-                <Text>{item.title}</Text>
-                <Text style={{color: 'gray'}}>Author</Text>
+                <Text style={styles.textTitle2} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <Text style={styles.textAuthor} numberOfLines={1}>
+                  Author Author AuthorAuthor
+                </Text>
               </TouchableOpacity>
             )}
           />
@@ -263,8 +263,12 @@ export default class Home extends Component {
                     />
                   </View>
                 </CardView>
-                <Text>{item.title}</Text>
-                <Text style={{color: 'gray'}}>Author</Text>
+                <Text style={styles.textTitle2} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <Text style={styles.textAuthor} numberOfLines={1}>
+                  Author Author AuthorAuthor
+                </Text>
               </TouchableOpacity>
             )}
           />
@@ -363,5 +367,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  textTitle2: {marginTop: setWidth('1%'), width: setWidth('28%')},
+  textAuthor: {
+    color: 'gray',
+    width: setWidth('28%'),
+    fontSize: setWidth('3.5%'),
   },
 });

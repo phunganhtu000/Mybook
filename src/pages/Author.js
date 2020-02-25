@@ -27,7 +27,7 @@ export default class Author extends Component {
           name: 'Nguyễn Tuân',
           numbersp: '1',
           describe:
-            'Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.',
+            'Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.Nguyễn Tuân, sở trường về tùy bút và ký, được tặng Giải thưởng Hồ Chí Minh về văn học nghệ thuật năm 1996. Tác phẩm của Nguyễn Tuân luôn thể hiện phong cách độc đáo, tài hoa, sự hiểu biết phong phú nhiều mặt và vốn ngôn ngữ, giàu có, điêu luyện.',
           birday: '10/07/1910',
           image:
             'https://vanvietnam.files.wordpress.com/2015/03/wpid-nhavannguyentuan1_jpg.jpeg',
@@ -42,7 +42,7 @@ export default class Author extends Component {
             'https://jonathanvankin.com/wp-content/uploads/2018/11/tac-gia-nguyen-trai-mot-net-chinh-trong-cuoc-doi-va-su-nghiep-1-e1541994154625.jpg',
         },
         {
-          name: 'Hàn   Mặc Tử',
+          name: 'Hàn Mặc Tử',
           numbersp: '1',
           describe:
             'Hàn Mặc Tử (1912-1940) tên khai sinh là Nguyễn Trọng Trí, quê ở làng Mĩ Lệ, tổng Võ Xá, huyện Phong Lộc, tỉnh Đồng Hới (nay thuộc tỉnh Quảng Bình). ... Năm 1936, Hàn Mặc Tử phải trở về Quy Nhơn để chữa bệnh, bốn năm sau ông mất do căn bệnh phong.',
@@ -79,25 +79,6 @@ export default class Author extends Component {
       ),
     };
   };
-  // static navigationOptions1 = ({navigation}) => {
-  //   return {
-  //     headerLeft: (
-  //       <TouchableOpacity
-  //         style={{
-  //           marginHorizontal: setWidth('5%'),
-  //           flexDirection: 'row',
-  //           alignItems: 'center',
-  //         }}
-  //         onPress={() => navigation('Menu_Scren')}>
-  //         <Icon
-  //           name="ios-arrow-back"
-  //           type="Ionicons"
-  //           style={{fontSize: 25, color: '#00003D'}}
-  //         />
-  //       </TouchableOpacity>
-  //     ),
-  //   };
-  // };
 
   componentWillMount() {
     this.props.navigation.setParams({
@@ -120,11 +101,10 @@ export default class Author extends Component {
     return (
       <TouchableOpacity
         style={styles.viewItem}
-        // onPress={() => navigate('DetailCenter', { item: item })}
-      >
+        onPress={() => navigate('AuthorDetail', {item: item})}>
         <Image style={styles.ImageComponentStyle} source={{uri: item.image}} />
         <View style={styles.ItemTextStyle}>
-          <Text style={styles.textName1}>Shegeo Toguda</Text>
+          <Text style={styles.textName1}>{item.name}</Text>
           <Text style={styles.textName} numberOfLines={1}>
             {item.numbersp} tác phẩm
           </Text>
@@ -137,8 +117,7 @@ export default class Author extends Component {
     return (
       <TouchableOpacity
         style={styles.viewItem2}
-        // onPress={() => navigate('DetailCenter', { item: item })}
-      >
+        onPress={() => navigate('AuthorDetail', {item: item})}>
         <Image style={styles.ImageComponentStyle2} source={{uri: item.image}} />
         <View style={styles.ItemTextStyle2}>
           <Text style={styles.text1Name2} numberOfLines={1}>
@@ -217,7 +196,7 @@ const styles = StyleSheet.create({
   },
 
   ImageComponentStyle2: {
-    height: setWidth('40%'),
+    height: setWidth('35%'),
     width: setWidth('30%'),
     margin: setWidth('1.5%'),
   },
