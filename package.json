@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.0",
     "@react-native-community/masked-view": "^0.1.6",
+    "@react-native-community/viewpager": "^3.3.0",
     "axios": "^0.19.2",
     "native-base": "^2.13.8",
     "prop-types": "^15.7.2",
@@ -24,7 +25,7 @@
     "react-native-responsive-screen": "^1.4.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.0.0-beta.10",
-    "react-native-slideshow": "^1.0.1",
+    "react-native-swiper": "^1.5.14",
     "react-native-tab-navigator": "^0.3.4",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.1.1",

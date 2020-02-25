@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Swiper from 'react-native-swiper';
+
 import HeaderComponents from '../components/headerComponents';
-import Slideshow from 'react-native-slideshow';
 import FastImage from 'react-native-fast-image';
 import {setWidth, setHeight} from '../cores/baseFuntion';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -147,11 +148,24 @@ export default class Home extends Component {
             typeIconLeft="Feather"
             navigationProps={navigation}
           />
-          <Slideshow
-            dataSource={this.state.dataSource}
-            position={this.state.position}
-            onPositionChanged={position => this.setState({position})}
-          />
+          <Swiper
+            height={setHeight('27%')}
+            width={setWidth('100%')}
+            autoplay={true}
+            style={styles.wrapper}>
+            {this.state.dataSource.map(function(item) {
+              return (
+                <View style={styles.slide1}>
+                  <FastImage
+                    source={{
+                      uri: item.url,
+                    }}
+                    style={{width: '100%', height: '100%'}}
+                  />
+                </View>
+              );
+            })}
+          </Swiper>
           <View style={styles.viewTitle}>
             <Text style={styles.textTitle}>
               {this.state.dataText[this.state.stt].title}
@@ -344,5 +358,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: setWidth('0.5%'),
     left: setWidth('0.5%'),
+  },
+  slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
