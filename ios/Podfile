@@ -36,7 +36,6 @@ target 'My_book' do
 
 
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'My_bookTests' do
     inherit! :search_paths
