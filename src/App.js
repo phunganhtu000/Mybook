@@ -19,12 +19,15 @@ import NewDetail from './pages/NewDetail/NewDetail';
 import Author from './pages/Author';
 import AuthorDetail from './pages/AuthorDetail/AuthorDetail';
 import Category from './pages/Category';
+import BookDetail from './pages/BookDetail/BookDetail';
 import Profile from './pages/Profile';
 import Menu from './pages/Menu';
 import HeaderComponents from './components/headerComponents';
 import CustomSidebarMenu from './components/CustomSidebarMenu';
 import CustomHeaderHome from './components/CustomHeaderHome';
 import HeaderAuthor from './components/headerAuthor';
+import BookSpeak from './pages/BookcaseDetail/BookSpeak';
+import BookAudio from './pages/BookcaseDetail/BookAudio';
 
 class HeaderLefp extends Component {
   render() {
@@ -56,12 +59,6 @@ const FirstActivity_StackNavigator = createStackNavigator({
       headerLeft: <HeaderLefp navigationProps={navigation} />,
     }),
   },
-  AuthorDetail: {
-    screen: AuthorDetail,
-    navigationOptions: {
-      header: null,
-    },
-  },
 });
 
 const Screen2_StackNavigator = createStackNavigator({
@@ -77,12 +74,6 @@ const Screen2_StackNavigator = createStackNavigator({
 const Menu_Scren = createStackNavigator({
   Menu: {
     screen: Menu,
-    navigationOptions: {
-      header: null,
-    },
-  },
-  NewDetail: {
-    screen: NewDetail,
     navigationOptions: {
       header: null,
     },
@@ -124,12 +115,36 @@ const AppNavigator = createStackNavigator({
       header: null,
     },
   },
-  // Menu: {
-  //   screen: DrawerNavigatorExample,
-  //   navigationOptions: {
-  //     header: null,
-  //   },
-  // },
+  NewDetail: {
+    screen: NewDetail,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  BookDetail: {
+    screen: BookDetail,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  AuthorDetail: {
+    screen: AuthorDetail,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  BookSpeak: {
+    screen: BookSpeak,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  BookAudio: {
+    screen: BookAudio,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 
 const App = createAppContainer(AppNavigator);

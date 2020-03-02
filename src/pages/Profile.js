@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useEffect, Component} from 'react';
 import {
   FlatList,
   Image,
@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import HeaderComponent from '../components/CustomHeaderBack';
+// import TrackPlayer, {usePlaybackState} from 'react-native-track-player';
 
 export default class Profile extends Component {
   constructor(props) {

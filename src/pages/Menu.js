@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions, View} from 'react-native';
+import {StyleSheet, Dimensions, View, Text} from 'react-native';
 import React from 'react';
 import {Icon} from 'native-base';
 import TabNavigator from 'react-native-tab-navigator';

@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
+import TrackPlayer from 'react-native-track-player';
 
 import HeaderComponents from '../components/headerComponents';
 import FastImage from 'react-native-fast-image';
@@ -33,7 +34,7 @@ export default class Home extends Component {
       stt: 0,
       dataSource: [
         {
-          title: 'Title 1asdasdasdasdasdasdsad',
+          title: 'Title hello 1 1',
           caption: 'Caption 1',
           url:
             'https://i.pinimg.com/564x/9e/fb/e3/9efbe345df76481b9f06e3013a9ed7db.jpg',
@@ -122,20 +123,37 @@ export default class Home extends Component {
               ? 0
               : this.state.stt + 1,
         });
-      }, 2700),
+      }, 6000),
     });
+    // TrackPlayer.setupPlayer().then(async () => {
+    //   // Adds a track to the queue
+    //   await TrackPlayer.add({
+    //     id: 'trackId',
+    //     url: require('../assets/audio.mp3'),
+    //     title: 'Track Title',
+    //     artist: 'Track Artist',
+    //     artwork: require('../assets/image/bookcase.png'),
+    //   });
+
+    //   // Starts playing it
+    //   TrackPlayer.play();
+    // });
   }
   componentWillUnmount() {
     clearInterval(this.state.interval);
     clearInterval(this.state.interval2);
   }
+
   render() {
     const {navigation} = this.props;
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.saf}>
         <ScrollView>
           <HeaderComponents
             // title="hello"
+            checkLeft
+            checkRight
             iconLeft="menu"
             typeIconLeft="Feather"
             navigationProps={navigation}
@@ -186,7 +204,7 @@ export default class Home extends Component {
             renderItem={({item}) => (
               <TouchableOpacity
                 activeOpacity={1}
-                // onPress={() => navigate('Details', {item: item})}
+                onPress={() => navigate('BookDetail', {item: item})}
                 style={styles.item}>
                 <CardView>
                   <FastImage source={{uri: item.url}} style={styles.image} />
