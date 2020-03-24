@@ -65,6 +65,9 @@ export default class News extends Component {
       <View style={styles.saf}>
         <ScrollView>
           <HeaderComponents
+            // title="hello"
+            checkLeft
+            checkRight
             iconLeft="menu"
             typeIconLeft="Feather"
             navigationProps={navigation}

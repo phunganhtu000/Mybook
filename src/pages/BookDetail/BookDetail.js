@@ -157,11 +157,7 @@ export default class AuthorDetail extends Component {
             <View style={styles.textitem}>
               <Text style={styles.textcate}>Ngày xuất bản</Text>
               <Text style={styles.textnamecate}>Thời gian</Text>
-              <Icon
-                name="chevron-small-right"
-                type="Entypo"
-                style={styles.iconright}
-              />
+              <View />
             </View>
           </View>
           <View style={styles.viewTrong} />

@@ -35,6 +35,7 @@ export default class BookSpeak extends Component {
 
   render() {
     const {navigation} = this.props;
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.saf}>
         {/* <View style={styles.viewTrong}>
@@ -54,7 +55,7 @@ export default class BookSpeak extends Component {
           renderItem={({item}) => (
             <TouchableOpacity
               activeOpacity={1}
-              // onPress={() => navigate('Details', {item: item})}
+              onPress={() => navigate('BookDetail', {item: item})}
               style={styles.item2}>
               <CardView>
                 <FastImage source={{uri: item.url}} style={styles.image2} />

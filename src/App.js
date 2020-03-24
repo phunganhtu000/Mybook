@@ -28,6 +28,8 @@ import CustomHeaderHome from './components/CustomHeaderHome';
 import HeaderAuthor from './components/headerAuthor';
 import BookSpeak from './pages/BookcaseDetail/BookSpeak';
 import BookAudio from './pages/BookcaseDetail/BookAudio';
+import Viewall from './pages/BookDetail/Viewall';
+import Search from './pages/Search';
 
 class HeaderLefp extends Component {
   render() {
@@ -141,6 +143,18 @@ const AppNavigator = createStackNavigator({
   },
   BookAudio: {
     screen: BookAudio,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Search: {
+    screen: Search,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Viewall: {
+    screen: Viewall,
     navigationOptions: {
       header: null,
     },

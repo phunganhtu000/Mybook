@@ -45,7 +45,7 @@ export default class HeaderComponent extends Component {
           ) : null}
           {checkLeft ? (
             <TouchableOpacity
-              onPress={() => navigate('Author')}
+              onPress={() => navigate('Search')}
               style={styles.input}>
               <Icon
                 name="ios-search"
@@ -56,7 +56,7 @@ export default class HeaderComponent extends Component {
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
-              onPress={() => navigate('Author')}
+              onPress={() => navigate('Search')}
               style={styles.input2}>
               <Icon
                 name="ios-search"

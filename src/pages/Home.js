@@ -190,9 +190,11 @@ export default class Home extends Component {
           <View style={styles.viewngang} />
           <View style={styles.viewSelling}>
             <Text style={{fontSize: setWidth('4.5%')}}>Sách mới nhất</Text>
-            <Text style={{fontSize: setWidth('4.5%'), color: '#FF2D55'}}>
-              XEM TẤT CẢ
-            </Text>
+            <TouchableOpacity onPress={() => navigate('Viewall')}>
+              <Text style={{fontSize: setWidth('4.5%'), color: '#FF2D55'}}>
+                XEM TẤT CẢ
+              </Text>
+            </TouchableOpacity>
           </View>
           <FlatList
             style={{
@@ -235,7 +237,7 @@ export default class Home extends Component {
             renderItem={({item}) => (
               <TouchableOpacity
                 activeOpacity={1}
-                // onPress={() => navigate('Details', {item: item})}
+                onPress={() => navigate('BookDetail', {item: item})}
                 style={styles.item2}>
                 <CardView>
                   <FastImage source={{uri: item.url}} style={styles.image2} />

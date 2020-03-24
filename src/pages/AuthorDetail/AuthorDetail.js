@@ -53,6 +53,7 @@ export default class AuthorDetail extends Component {
   };
   render() {
     const {navigation} = this.props;
+    const {navigate} = this.props.navigation;
     const item = this.props.navigation.state.params.item;
     return (
       <View style={styles.saf}>
@@ -112,7 +113,7 @@ export default class AuthorDetail extends Component {
             renderItem={({item}) => (
               <TouchableOpacity
                 activeOpacity={1}
-                // onPress={() => navigate('Details', {item: item})}
+                onPress={() => navigate('BookDetail', {item: item})}
                 style={styles.item2}>
                 <CardView>
                   <FastImage source={{uri: item.url}} style={styles.image2} />

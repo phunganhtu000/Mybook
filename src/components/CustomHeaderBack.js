@@ -12,7 +12,7 @@ import {Icon} from 'native-base';
 import {setWidth} from '../cores/baseFuntion';
 import FastImage from 'react-native-fast-image';
 
-export default class CustomHeaderComponents extends Component {
+export default class CustomHeaderBack extends Component {
   constructor(props) {
     super(props);
     this.state = {
